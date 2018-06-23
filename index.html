@@ -1,320 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>Introduction to Git &amp; Github</title>
-    <meta name="description" content="An introduction to git for beginners">
-    <meta name="author" content="Sanyam Khurana">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css" id="theme">
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-    <!-- Printing and PDF exports -->
-    <script>
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-    <!--[if lt IE 9]>
+  <meta charset="utf-8">
+  <title>Introduction to Git &amp; Github</title>
+  <meta name="description" content="An introduction to git for beginners">
+  <meta name="author" content="Sanyam Khurana">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css" id="theme">
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+  <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
 </head>
+
 <body>
-    <div class="reveal">
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <section>
-                <h1>Learning version control using Git</h1>
-                <p>
-                    <small>
-                        Created by
-                            <a href="http://www.SanyamKhurana.com">Sanyam Khurana</a> /
-                            <a href="http://twitter.com/ErSanyamKhurana">@ErSanyamKhurana</a> /
-                            <a href="http://github.com/CuriousLearner">@CuriousLearner</a>
-                    </small>
-                </p>
-            </section>
-            <section id="fr1">
-                <h2>Daily Tasks as Programmer</h2>
-                <p>
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <h1>Learning version control using Git</h1>
+      </section>
+      <section id="fr1">
+        <h2>Daily Tasks as Programmer</h2>
+        <p>
+          <ul>
+            <li class="fragment">Create “Things”</li>
+            <li class="fragment">Save “Things”</li>
+            <li class="fragment">Edit “Things”</li>
+            <li class="fragment">Save “Things” AGAIN!</li>
+          </ul>
+        </p>
+      </section>
+      <section>
+        <h2>Naive method have version control</h2>
+        <p>
+          <img src="./assets/img/git_naive_vc.png" />
+        </p>
+      </section>
+      <section id="fr2">
+        <h2>Problems in naive method</h2>
+        <p>
+          <ul>
+            <li class="fragment">No one knows who changed what</li>
+            <li class="fragment">We created duplicate copies of same thing (wasting space)</li>
+            <li class="fragment">No one took time to note what was exactly changed</li>
+          </ul>
+        </p>
+      </section>
+      <section>
+        <h2>What we wanted to do? - SAVE THINGS AGAIN</h2>
+        <p>
+          <ul>
+            <li class="fragment">Who did it?</li>
+            <li class="fragment">Why they did it?</li>
+            <li class="fragment">What exactly was changed?</li>
+            <li class="fragment">We want to keep track of history</li>
+          </ul>
+        </p>
+      </section>
+      <section id="fr3">
+        <h2>Version Control comes to rescue</h2>
+        <section>
+          <ul>
+            <li class="fragment">Method to track changes to file(s) and folder(s) and your binaries.</li>
+            <li class="fragment">Who changed what, why and when? - via commit messages.</li>
+            <li class="fragment">When did they change it - saving time and date with every commit.</li>
+            <li class="fragment">Identifying each change seperately with a use of a unique identifier - SHA1 hashes.</li>
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li class="fragment">Non-Distributed [Centralized] – Subversion, CVS</li>
+            <li class="fragment">All commit goes to centralized master repo</li>
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li class="fragment">Distributed – Git, Mercurial</li>
+            <li class="fragment">Commit goes to remote repo but everyone has a copy (clone)</li>
+          </ul>
+        </section>
+      </section>
+      <section id="fr4">
+        <h2>Why Git?</h2>
+        <section>
+          <p>
+            <ul>
+              <li class="fragment">It's free and open-source.</li>
+              <li class="fragment">You can use git even when you're offline</li>
+              <li class="fragment">Code revisions (commit) that you made would be available to only you locally unless
+                  you push to remote repo.</li>
+              <li class="fragment">Create and support parallel branches, work locally, isolate your work and merge seamlessly
+                  to collaborate.</li>
+              <li class="fragment">It takes snapshots of changes and treat files as stream of snapshots over time.</li>
+            </ul>
+          </p>
+        </section>
+        <section>
+          <p>
+            <ul>
+              <li class="fragment">It compresses the .git contents</li>
+              <li class="fragment">It has integrity</li>
+              <li class="fragment">The mechanism that Git uses for this checksumming is called a SHA-1 hash. This is a
+                  40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents
+                  of a file or directory structure in Git. A SHA-1 hash looks something like this:
+                <pre><code class="hljs" data-trim contenteditable>24b9da6552252987aa493b52f8696cd6d3b00373</code></pre>
+              </li>
+            </ul>
+          </p>
+        </section>
+        <section>
+          <p>
+            <ul>
+              <li class="fragment">Git stores everything in its database not by file name but by the hash value of its
+                  contents. These hash values are used very frequently.
+              </li>
+            </ul>
+          </p>
+        </section>
+      </section>
+      <section id="7">
+        <h2>Demo</h2>
+        <p>
+          <ul>
+            <li class="fragment">Configure git</li>
+            <li class="fragment">Forking Repositories on Github</li>
+            <li class="fragment">Cloning Them</li>
+            <li class="fragment">Making Changes</li>
+            <li class="fragment">Commiting those Changes</li>
+            <li class="fragment">Adding Remotes</li>
+            <li class="fragment">Checkout</li>
+            <li class="fragment">Pushing Your Changes</li>
+            <li class="fragment">Branching</li>
+            <li class="fragment">Making Pull Requests</li>
+            <li class="fragment">Pulling New Changes and more ..</li>
+          </ul>
+        </p>
+      </section>
+      <section id="8">
+        <h2>Git Workflow</h2>
+        <section>
+          <span>Configuring git
+            <pre><code class="hljs" data-trim>git config --global user.name "John Doe"</code></pre>
+            <pre><code class="hljs" data-trim> git config --global user.email "johndoe@example.com"</code></pre>
+            <pre><code class="hljs" data-trim> git config --global core.editor "nano"</code></pre>
+            <p>
+              <ul>
+                <li class="fragment">This is done for git to identify who is making the commits. For newbies, we
+                  recommend going with nano at the beginning as the editor of choice.</li>
+              </ul>
+            </p>
+          </span>
+        </section>
+        <section>
+          <span>Obtain Repository <br>[Make your own/Clone from upstream]
+            <pre><code class="hljs" data-trim>git init</code></pre>
+            <pre><code class="hljs" data-trim>git clone {repo_url} {directory_name} </code></pre>
+          </span>
+        </section>
+        <section>
+          <span>Stage Changes<br>[Untracked Changes --> Staging them]
+            <pre><code class="hljs" data-trim>git add {filename}</code></pre>
+            <pre><code class="hljs" data-trim>git status</code></pre>
+              <p>
                 <ul>
-                    <li class="fragment">Create “Things”</li>
-                    <li class="fragment">Save “Things”</li>
-                    <li class="fragment">Edit “Things”</li>
-                    <li class="fragment">Save “Things” AGAIN!</li>
+                  <li class="fragment">Git tracks everything in your directory. Go ahead make and edit some new
+                    files and let git do all the heavy lifting for you.</li>
                 </ul>
-                </p>
-            </section>
-            <section>
-                <h2>Naive method have version control</h2>
-                <p>
-                    <img src="./assets/img/git_naive_vc.png"/>
-                </p>
-            </section>
-            <section id="fr2">
-                <h2>Problems in naive method</h2>
-                <p>
-                <ul>
-                    <li class="fragment">No one knows who changed what</li>
-                    <li class="fragment">We created duplicate copies of same thing (wasting space)</li>
-                    <li class="fragment">No one took time to note what was exactly changed</li>
-                </ul>
-                </p>
-            </section>
-            <section>
-                <h2>What we wanted to do? - SAVE THINGS AGAIN</h2>
-                <p>
-                <ul>
-                    <li class="fragment">Who did it?</li>
-                    <li class="fragment">Why they did it?</li>
-                    <li class="fragment">What exactly was changed?</li>
-                    <li class="fragment">We want to keep track of history</li>
-                </ul>
-                </p>
-            </section>
-            <section id="fr3">
-                <h2>Version Control comes to rescue</h2>
-                <section>
-                    <ul>
-                        <li class="fragment">Method to track changes to file(s) and folder(s) and your binaries.</li>
-                        <li class="fragment">Who changed what and why? - via commit messages</li>
-                    </ul>
-                </section>
-                <section>
-                    <ul>
-                        <li class="fragment">Non-Distributed [Centralized] – Subversion, CVS</li>
-                        <li class="fragment">All commit goes to centralized master repo</li>
-                    </ul>
-                </section>
-                <section>
-                    <ul>
-                        <li class="fragment">Distributed – Git, Mercurial</li>
-                        <li class="fragment">Commit goes to remote repo but everyone has a copy (clone)</li>
-                    </ul>
-                </section>
-            </section>
-            <section id="fr4">
-                <h2>Why Git?</h2>
-                <section>
-                    <p>
-                    <ul>
-                        <li class="fragment">You can use git even when you're offline</li>
-                        <li class="fragment">Code revisions (commit) that you made would be available to only you locally
-                            unless you push to remote repo.
-                        </li>
-                        <li class="fragment">Create branches, work locally, isolate your work and merge seamlessly.</li>
-                        <li class="fragment">It takes snapshots of changes and treat files as stream of snapshots over
-                            time.
-                        </li>
-                    </ul>
-                    </p>
-                </section>
-                <section>
-                    <p>
-                    <ul>
-                        <li class="fragment">It compresses the .git contents</li>
-                        <li class="fragment">It has integrity</li>
-                        <li class="fragment">The mechanism that Git uses for this checksumming is called a SHA-1 hash. This
-                            is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based
-                            on the contents of a file or directory structure in Git. A SHA-1 hash looks something like this:
-                            <pre><code class="hljs" data-trim
-                                       contenteditable>24b9da6552252987aa493b52f8696cd6d3b00373</code></pre>
-                        </li>
-                    </ul>
-                    </p>
-                </section>
-                <section>
-                    <p>
-                    <ul>
-                        <li class="fragment">You will see these hash values all over the place in Git because it uses them
-                            so much. In fact, Git stores everything in its database not by file name but by the hash value
-                            of its contents.
-                        </li>
-                    </ul>
-                    </p>
-                </section>
-            </section>
-            <section id="7">
-                <h2>Demo</h2>
-                <p>
-                <ul>
-                    <li class="fragment">Configure git</li>
-                    <li class="fragment">Forking Repositories on Github</li>
-                    <li class="fragment">Cloning Them</li>
-                    <li class="fragment">Making Changes</li>
-                    <li class="fragment">Commiting those Changes</li>
-                    <li class="fragment">Adding Remotes</li>
-                    <li class="fragment">Checkout</li>
-                    <li class="fragment">Pushing Your Changes</li>
-                    <li class="fragment">Branching</li>
-                    <li class="fragment">Making Pull Requests</li>
-                    <li class="fragment">Pulling New Changes and more ..</li>
-                </ul>
-                </p>
-            </section>
-            <section id="8">
-                <h2>Git Workflow</h2>
-                <section>
-                <span>Configuring git
-                  <pre><code class="hljs" data-trim>git config --global user.name "John Doe"</code></pre>
-                  <pre><code class="hljs" data-trim> git config --global user.email "johndoe@example.com"</code></pre>
-                  <pre><code class="hljs" data-trim> git config --global core.editor "nano"</code></pre>
-                  <p>
-                  <ul>
-                      <li class="fragment">This is done for git to identify who is making the commits. For newbies, we recommend going with nano at the beginning as the editor of choice.</li>
-                  </ul>
-                  </p>
-                  </span>
-                </section>
-                <section>
-                <span>Obtain Repository <br>[Make your own/Clone from upstream]
-                  <pre><code class="hljs" data-trim>git init</code></pre>
-                  <pre><code class="hljs" data-trim>git clone {repo_url} {directory_name} </code></pre>
-                </span>
-                </section>
-                <section>
-                <span>Stage Changes<br>[Untracked Changes --> Staging them]
-                  <pre><code class="hljs" data-trim>git add {filename}</code></pre>
-                  <pre><code class="hljs" data-trim>git status</code></pre>
-                  <p>
-                  <ul>
-                      <li class="fragment">Git tracks everything in your directory. Go ahead make and edit some new files and let git do all the heavy lifting for you.</li>
-                  </ul>
-                  </p>
-                </span>
-                </section>
-                <section>
-                <span>
-                  Commit Changes <br> [Staged changes --> Commiting them]
-                  <pre><code class="hljs" data-trim>git commit -m “Commit message”</code></pre>
-                  <pre><code class="hljs" data-trim>git status</code></pre>
-                  <pre><code class="hljs" data-trim>git log</code></pre>
-                </span>
-                </section>
-                <section>
-                <span>
-                  Defining Remotes
-                  <pre><code class="hljs" data-trim>git remote -v</code></pre>
-                  <pre><code class="hljs" data-trim>git remote add {remote_name} {repo_url}</code></pre>
-                  <p>
-                  <ul>
-                      <li class="fragment">A remote is basically a bookmark that leads to a different repository from which you may wish to pull or push your code.</li>
-                  </ul>
-                  </p>
-                </span>
-                </section>
-                <section>
-                <span>
-                  Push Changes to Remote Repo
-                  <pre><code class="hljs" data-trim>git push {remote_name} {branch_name}</code></pre>
-                </span>
-                <p>
-                <ul>
-                    <li class="fragment">Pushing to a repository requires authentication that needs to be provided in the form of your Github username and password.</li>
-                </ul>
-                <p>
-                </section>
-                <section>
-                <span>
-                    Repeat till you get them right ... <br> Then move on to more advanced topics such as branching, rebasing and cherry-picking commits.
-                </span>
-                </section>
-            </section>
-            <section id="fr8">
-                <h2>A bit about git internals</h2>
-                <p>
-                <ul>
-                    <li class="fragment">Commits are actually SHA1 hashes that creates the distinction</li>
-                    <li class="fragment">All commits in repo are nodes of a tree</li>
-                    <li class="fragment">.git folder contains:
-                        <ul>
-                            <li>config – Configuration files</li>
-                            <li>logs/* - All the logs for commits</li>
-                            <li>objects/* - The object repository</li>
-                            <li>refs/remotes/* - tracking other remotes</li>
-                            <li>Index – index cache (staging area)</li>
-                            <li>HEAD – points to the latest commit on current branch</li>
-                        </ul>
-                    </li>
-                </ul>
-                </p>
-            </section>
-            <section>
-                <h2>Where to go from here?</h2>
-                <p>
-                <ul>
-                    <li><a href="http://www.git-scm.com">www.git-scm.com</a></li>
-                    <li>Learn git-flow</li>
-                </ul>
-                </p>
-            </section>
-            <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-                <h2>That moment when you know the power of Git</h2>
-            </section>
-            <section style="text-align: left;">
-                <h1>THE END</h1>
-                <p>
-                    Questions?
-                <hr>
-                Shout out on Twitter: <a href="http://www.twitter.com/ErSanyamKhurana">@ErSanyamKhurana</a>
-                <hr>
-                Shoot a mail at: Sanyam@MozPacers.org
-                </p>
-            </section>
-
-        </div>
-
+              </p>
+            </span>
+        </section>
+        <section>
+          <span>
+            Commit Changes <br> [Staged changes --> Commiting them]
+            <pre><code class="hljs" data-trim>git commit -m “Commit message”</code></pre>
+            <pre><code class="hljs" data-trim>git status</code></pre>
+            <pre><code class="hljs" data-trim>git log</code></pre>
+          </span>
+        </section>
+        <section>
+          <span>
+            Defining Remotes
+            <pre><code class="hljs" data-trim>git remote -v</code></pre>
+            <pre><code class="hljs" data-trim>git remote add {remote_name} {repo_url}</code></pre>
+            <p>
+              <ul>
+                  <li class="fragment">A remote is basically a bookmark that leads to a different repository from
+                    which you may wish to pull or push your code.</li>
+              </ul>
+            </p>
+          </span>
+        </section>
+        <section>
+          <span>
+            Push Changes to Remote Repo
+            <pre><code class="hljs" data-trim>git push {remote_name} {branch_name}</code></pre>
+          </span>
+          <p>
+            <ul>
+              <li class="fragment">Pushing to a repository requires authentication that needs to be provided in the
+                  form of your Github username and password.</li>
+            </ul>
+          </p>
+        </section>
+        <section>
+          <span>
+            Repeat till you get them right ... <br> Then move on to more advanced topics such as branching, rebasing and cherry-picking commits.
+          </span>
+        </section>
+      </section>
+      <section id="fr8">
+        <h2>A bit about git internals</h2>
+        <p>
+          <ul>
+            <li class="fragment">Commits are actually SHA1 hashes that creates the distinction</li>
+            <li class="fragment">All commits in repo are nodes of a tree</li>
+            <li class="fragment">.git folder contains:
+              <ul>
+                <li>config – Configuration files</li>
+                <li>logs/* - All the logs for commits</li>
+                <li>objects/* - The object repository</li>
+                <li>refs/remotes/* - tracking other remotes</li>
+                <li>Index – index cache (staging area)</li>
+                <li>HEAD – points to the latest commit on current branch</li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+      </section>
+      <section id="fr9">
+        <h2>Where to go from here?</h2>
+        <p>
+          <ul>
+            <li><a href="www.git-scm.com">www.git-scm.com</a></li>
+            <li>Learn git-flow</li>
+          </ul>
+        </p>
+      </section>
+      <section>
+        <h2>and more...</h2>
+        <p>
+          <ul>
+            <li>Implement git and GitHub in your future projects.</li>
+            <li>Contribute to major upstream open-source projects like Mozilla, Django, Linux kernel and many more.</li>
+            <li>Sharpen your skills and learn new technologies by solving issues.</li>
+            <li>Widen your network and find fun new side-projects.</li>
+            <li>Use your GitHub profile to showcase projects on your resume.</li>
+          </ul>
+        </p>
+      </section>
+      <section>
+        <h2>Resources & References</h2>
+        <p>
+          <ul>
+            <li>Documentation for reference - <a href="http://www.git-scm.com/">http://www.git-scm.com/</a> </li>
+            <li>A simple fast-paced <a href="http://rogerdudler.github.io/git-guide/">guide to git </a>for reference</li>
+            <li>On fixing problems with commits - <a href="http://sethrobertson.github.io/GitFixUm/fixup.html">highly recommended</a></li>
+            <li><a href="https://github.com/Roshanjossey/first-contributions">Git tutorials in other languages</a></li>
+            <li><a href="https://www.git-tower.com/learn/cheat-sheets/git">Git cheat sheet</a></li>
+            <li>Using <a href="https://www.atlassian.com/git/tutorials/using-branches">git branch</a></li>
+            <li>Learning <a href="https://blog.gitprime.com/git-rebase-an-illustrated-guide/">Git Rebase</a></li>
+            <li>Diving deeper into the working of git - <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html">GitMagic</a></li>
+            <li>A video to understand how Github works by <a href="http://tiny.cc/gotvideo">Github</a></li>
+            <li><a href="http://google.com">For all other problems, our common friend.</a></li>
+          </ul>
+        </p>
+      </section>
+      <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+        <h2>That moment when you realise the power of Git</h2>
+      </section>
+      <section id="fr10">
+        <h2>Contributors</h2> If you like what you saw, then do thank the contributors :-
+        <p>
+          <ul style="font-size:75%;">
+            <li>Sanyam Khurana - Goes on Twitter by <a href="http://www.twitter.com/ErSanyamKhurana">@ErSanyamKhurana</a> |
+              <a href="http://thegeekyway.com/">The Geeky Way</a></li> |
+            <li>Vipul Gupta - available all over the web by <a href="https://twitter.com/vipulgupta2048">@vipulgupta2048</a> | <a href="https://mixstersite.wordpress.com"> Mixster</a></li>
+            <li>Sandeep Choudhary - available on Github by <a href="https://github.com/Skchoudhary">@Skchoudhary</a></li>
+            <li>Vishak Sharma - goes on github by <a href="https://github.com/Vishal0203">@Vishal0203</a></li>
+          </ul>
+        </p>
+        <p> .. or if you didn't like it, then use your newfound knowledge of git to open an issue and contribute here on <a href="https://github.com/CuriousLearner/git-intro/">GitHub</a>.</p>
+      </section>
+      <section style="text-align: left;">
+        <h1>THE END</h1>
+        <p>
+          Questions?
+          <hr> Shout out on Twitter: <a href="http://www.twitter.com/ErSanyamKhurana">@ErSanyamKhurana</a>
+          <hr> Shoot a mail at: sanyam@sanyamkhurana.com
+        </p>
+      </section>
     </div>
+  </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
 
-    <script>
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-        // Full list of configuration options available at:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-            center: true,
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-            // Optional reveal.js plugins
-            dependencies: [
-                {
-                    src: 'lib/js/classList.js', condition: function () {
-                    return !document.body.classList;
-                }
-                },
-                {
-                    src: 'plugin/markdown/marked.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                }
-                },
-                {
-                    src: 'plugin/markdown/markdown.js', condition: function () {
-                    return !!document.querySelector('[data-markdown]');
-                }
-                },
-                {
-                    src: 'plugin/highlight/highlight.js', async: true, callback: function () {
-                    hljs.initHighlightingOnLoad();
-                }
-                },
-                {src: 'plugin/zoom-js/zoom.js', async: true},
-                {src: 'plugin/notes/notes.js', async: true}
-            ]
-        });
-
-    </script>
+      // Optional reveal.js plugins
+      dependencies: [{
+          src: 'lib/js/classList.js',
+          condition: function() {
+            return !document.body.classList;
+          }
+        },
+        {
+          src: 'plugin/markdown/marked.js',
+          condition: function() {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: 'plugin/markdown/markdown.js',
+          condition: function() {
+            return !!document.querySelector('[data-markdown]');
+          }
+        },
+        {
+          src: 'plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+        {
+          src: 'plugin/zoom-js/zoom.js',
+          async: true
+        },
+        {
+          src: 'plugin/notes/notes.js',
+          async: true
+        }
+      ]
+    });
+  </script>
 
 </body>
+
 </html>
